@@ -1,4 +1,4 @@
-import Profile from './Profile/Profile'
+import { Profile } from './Profile/Profile'
 import user from './Profile/user.json';
 
 export const App = () => {
@@ -13,6 +13,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
+      {/* #1 Компонент Profile */}
       <Profile
         username={user.username}
         tag={user.username}
@@ -20,6 +21,7 @@ export const App = () => {
         avatar ={user.avatar }
         stats ={user.stats }
       />
+
     </div>
   );
 };
