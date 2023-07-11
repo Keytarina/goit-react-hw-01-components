@@ -5,9 +5,9 @@
 }
 .item {     
     width: 300px;
-    padding: 20px;
+    padding: 20px 30px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
     background-color: #fff;
     font-family:  Arial, sans-serif;
@@ -16,9 +16,16 @@
     box-shadow: 10px 10px 40px #a9a9a9; 
 
 }
-.iconIsOnline {
-    fill: black;
+.iconOnline {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgb(208, 52, 52);
 }
-.status {}
-.avatar {}
-.name {}
+.iconOffline {
+    composes: iconOnline;
+    background-color: rgb(16, 173, 16);
+}
+.name {
+    font-weight: 400;
+}

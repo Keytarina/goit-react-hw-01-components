@@ -1,44 +1,37 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css';
+import css from './TransactionHistory.module.css';
 
-export const Profile = ({
-  username,
-  tag,
-  location,
-  avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-  stats,
-}) => {
+export const TransactionHistory = ({ transactions }) => {
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+        <table className={css.transactionHistory}>
+          <thead>
+            <tr>
+              <th className={css.tableHead}>Type</th>
+              <th className={css.tableHead}>Amount</th>
+              <th className={css.tableHead}>Currency</th>
+            </tr>
+          </thead>
 
-      <ul className={css.stats}>
-        <li>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
-        </li>
-        <li>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
-        </li>
-        <li>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+          <tbody>
+            {transactions.map(element => (
+                <tr key={element.id} className={css.tableData}>
+                  <td className={css.tableDataCell}>{element.type}</td>
+                  <td className={css.tableDataCell}>{element.amount}</td>
+                  <td className={css.tableDataCell}>{element.currency}</td>
+                </tr>
+            ))}
+          </tbody>
+      </table>
   );
 };
 
-Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.object,
+TransactionHistory.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

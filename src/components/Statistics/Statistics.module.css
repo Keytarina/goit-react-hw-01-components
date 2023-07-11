@@ -14,8 +14,23 @@
     text-transform: uppercase;
     align-items: center;
 }
-.statList {}
-.map {}
-.item {}
-.label {}
-.percentage {}
+.statList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.item {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+}
+.label {
+    font-size: 20px;
+    
+}
+.percentage {
+    font-size: 30px;
+}
