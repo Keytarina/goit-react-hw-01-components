@@ -1,0 +1,21 @@
+.friendList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: circle;
+}
+.item {     
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #fff;
+    font-family:  Arial, sans-serif;
+    font-size: 34px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 40px #a9a9a9;
+}
+.status {}
+.avatar {}
+.name {}
